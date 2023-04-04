@@ -23,7 +23,8 @@ public class RegistrationController extends HttpServlet {
 		String cPassword = request.getParameter("cPassword");
 		String gender = request.getParameter("gender");
 		String city = request.getParameter("city"); 
-		String hobbies = request.getParameter("hobbies");
+		String hobby_1 = request.getParameter("hobby_1");
+		String hobby_2 = request.getParameter("hobby_2");
 		
 		boolean isError = false;
 		StringBuffer error = new StringBuffer("");
@@ -75,7 +76,7 @@ public class RegistrationController extends HttpServlet {
 			error.append("<br> <span style='color:red;'>Password didn't match, please try again</span>");
 		}
 		
-		if(gender==null || gender.trim().length()==0) {
+		if(gender==null) {
 			isError=true;
 			error.append("<br><span style='color:red;'>Please select your gender</span>");
 		}
@@ -83,7 +84,7 @@ public class RegistrationController extends HttpServlet {
 			isError=true;
 			error.append("<br><span style='color:red;'>Please select your city</span>");
 		}
-		if(hobbies==null || hobbies.trim().length()==0) {
+		if(hobby_1==null && hobby_2==null) {
 			isError=true;
 			error.append("<br><span style='color:red;'>Please select your hobbies</span>");
 		}

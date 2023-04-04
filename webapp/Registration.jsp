@@ -23,8 +23,8 @@
 			<option value="Mumbai">Mumbai</option>
 		</select>
 		<br/><br/>
-	Hobbies* : <input type="checkbox" name="hobbies" value="travelling">Travelling
-			 <input type="checkbox" name="hobbies" value="Watching Matches">Watching Movies<br/><br/>	
+	Hobbies* : <input type="checkbox" name="hobby_1" value="travelling">Travelling
+			 <input type="checkbox" name="hobby_2" value="Watching Matches">Watching Movies<br/><br/>	
 	<input type="submit" value="Register">
 	</form>
 	<br/><br/>
