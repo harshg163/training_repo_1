@@ -4,6 +4,7 @@
   <welcome-file-list>
     <welcome-file>Signup.jsp</welcome-file>
     <welcome-file>Calc.jsp</welcome-file>
+    <welcome-file>Registration.jsp</welcome-file>
   </welcome-file-list>
   <servlet>
     <servlet-name>SignupController</servlet-name>

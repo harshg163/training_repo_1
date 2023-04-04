@@ -22,7 +22,7 @@ public class RegistrationController extends HttpServlet {
 		String password = request.getParameter("password");
 		String cPassword = request.getParameter("cPassword");
 		String gender = request.getParameter("gender");
-		String city = request.getParameter("city");
+		String city = request.getParameter("city"); 
 		String hobbies = request.getParameter("hobbies");
 		
 		boolean isError = false;

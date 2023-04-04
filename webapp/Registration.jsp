@@ -7,6 +7,7 @@
 </head>
 <body>
 	<% String error = (String)request.getAttribute("error"); %>
+	<h1>Registration Page</h1>
 	<form action="Registration" method="post">
 	FirstName* : <input type="text" name="firstName"><br/><br/>
 	LastName* : <input type="text" name="lastName"><br/><br/>
@@ -27,6 +28,6 @@
 	<input type="submit" value="Register">
 	</form>
 	<br/><br/>
-	<%=error %>
+	<%=error!=null?error:"" %>
 </body>
 </html>
