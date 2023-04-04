@@ -36,6 +36,7 @@ public class SignupController extends HttpServlet  {
 		else if (firstName.matches(fNameCheck) == false) {
 			isError=true;
 			request.setAttribute("firstNameError", "Please Enter valid FirstName");
+			request.setAttribute("firstName", firstName);
 		}
 		else {
 			request.setAttribute("firstName", firstName);
@@ -47,6 +48,7 @@ public class SignupController extends HttpServlet  {
 		else if (email.matches(emailCheck)==false) {
 			isError=true;
 			request.setAttribute("emailError", "Please Enter valid Email");
+			request.setAttribute("email", email);
 		}
 		else {
 			request.setAttribute("email", email);
@@ -55,10 +57,14 @@ public class SignupController extends HttpServlet  {
 		if(password==null || password.trim().length()==0) {
 			isError=true;
 			request.setAttribute("passwordError", "Please enter Password");
+			request.setAttribute("firstName", firstName);
+			request.setAttribute("email", email);
 		}
 		else if (password.matches(passwordCheck)==false) {
 			isError=true;
 			request.setAttribute("passwordError", "Please Enter valid Password");
+			request.setAttribute("firstName", firstName);
+			request.setAttribute("email", email);
 		}
 		
 		RequestDispatcher rd = null;

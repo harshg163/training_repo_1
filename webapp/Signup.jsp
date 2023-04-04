@@ -15,10 +15,10 @@
 	FirstName: <input type="text" name="firstName" value="${firstName}">
 	<span class="error">${firstNameError}</span> 
 	<br/><br/>
-	Email: <input type="text" class="error" name="email" value="${email}">
+	Email: <input type="text" name="email" value="${email}">
 	<span class="error">${emailError}</span>
 	<br/><br/>
-	Password: <input type="password" class="error" name="password">
+	Password: <input type="password" name="password">
 	<span class="error">${passwordError}</span>
 	<br/><br/>
 	<input type="submit" value="Submit">
