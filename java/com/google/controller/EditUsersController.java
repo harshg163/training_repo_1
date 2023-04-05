@@ -1,10 +1,6 @@
 package com.google.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -14,16 +10,31 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.google.bean.UserBean;
 import com.google.dao.UserDao;
-import com.google.util.DbConnection;
 
-public class SignupController extends HttpServlet  {
-	
-	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-//		System.out.println("Signup");
-		
+
+public class EditUsersController extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		Integer userId = Integer.valueOf(request.getParameter("userId"));
+		UserDao userdao = new UserDao();
+		UserBean user = userdao.getUserById(userId);
+		request.setAttribute("user", user);
+		RequestDispatcher rd = null;
+		if(user!=null) {
+			rd = request.getRequestDispatcher("Update.jsp");
+		}
+		else {
+			rd = request.getRequestDispatcher("UserList.jsp");
+		}
+		rd.forward(request, response);
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String firstName = request.getParameter("firstName");
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
+		Integer userId = Integer.valueOf(request.getParameter("userId"));
 		
 		UserBean user = new UserBean();
 		
@@ -69,23 +80,23 @@ public class SignupController extends HttpServlet  {
 			user.setFirstName(firstName);
 			user.setEmail(email);
 		}
-		else {
-			user.setFirstName(firstName);
-			user.setEmail(email);
-			user.setPassword(password);
-		}
+			
+		user.setFirstName(firstName);
+		user.setEmail(email);
+		user.setPassword(password);
+		user.setUserId(userId);
+			
 		UserDao userdao = new UserDao();
-		userdao.addUser(user);
+		userdao.editUser(user);
 		
 		request.setAttribute("user", user);
 		
-		RequestDispatcher rd = null;
 		if (isError == true) {
-			rd = request.getRequestDispatcher("Signup.jsp");
+			request.getRequestDispatcher("Update.jsp").forward(request, response);
 		}
 		else {
-			rd = request.getRequestDispatcher("Login.jsp");
+			response.sendRedirect("ListUsersController");
 		}
-		rd.forward(request, response);
 	}
+
 }

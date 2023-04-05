@@ -22,4 +22,54 @@
     <servlet-name>CalcServlet</servlet-name>
     <url-pattern>/CalcServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AuthenticationController</display-name>
+    <servlet-name>AuthenticationController</servlet-name>
+    <servlet-class>com.google.controller.AuthenticationController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AuthenticationController</servlet-name>
+    <url-pattern>/AuthenticationController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ListUsersController</display-name>
+    <servlet-name>ListUsersController</servlet-name>
+    <servlet-class>com.google.controller.ListUsersController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListUsersController</servlet-name>
+    <url-pattern>/ListUsersController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DeleteController</display-name>
+    <servlet-name>DeleteController</servlet-name>
+    <servlet-class>com.google.controller.DeleteController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteController</servlet-name>
+    <url-pattern>/DeleteController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SearchController</display-name>
+    <servlet-name>SearchController</servlet-name>
+    <servlet-class>com.google.controller.SearchController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SearchController</servlet-name>
+    <url-pattern>/SearchController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EditUsersController</display-name>
+    <servlet-name>EditUsersController</servlet-name>
+    <servlet-class>com.google.controller.EditUsersController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EditUsersController</servlet-name>
+    <url-pattern>/EditUsersController</url-pattern>
+  </servlet-mapping>
 </web-app>

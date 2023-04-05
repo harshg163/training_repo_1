@@ -7,5 +7,10 @@
 </head>
 <body>
 <h1>LOGIN PAGE</h1>
+<form action="AuthenticationController" method="post">
+	<input type="text" name="email" /><br/><br/>
+	<input type="text" name="password" /><br/><br/>
+	<input type="submit" value="login"/>
+</form>
 </body>
 </html>
