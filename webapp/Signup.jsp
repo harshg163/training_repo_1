@@ -12,10 +12,10 @@
 </head>
 <body>
 	<form action="SignupController" method="post">
-	FirstName: <input type="text" name="firstName" value="${firstName}">
+	FirstName: <input type="text" name="firstName" value="${user.firstName}">
 	<span class="error">${firstNameError}</span> 
 	<br/><br/>
-	Email: <input type="text" name="email" value="${email}">
+	Email: <input type="text" name="email" value="${user.email}">
 	<span class="error">${emailError}</span>
 	<br/><br/>
 	Password: <input type="password" name="password">

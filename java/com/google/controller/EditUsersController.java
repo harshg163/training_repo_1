@@ -80,12 +80,14 @@ public class EditUsersController extends HttpServlet {
 			user.setFirstName(firstName);
 			user.setEmail(email);
 		}
-			
+		
+		else {
 		user.setFirstName(firstName);
 		user.setEmail(email);
 		user.setPassword(password);
 		user.setUserId(userId);
-			
+		}
+		
 		UserDao userdao = new UserDao();
 		userdao.editUser(user);
 		
